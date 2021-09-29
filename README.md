@@ -12,7 +12,7 @@ You first need to [install Drake](https://drake.mit.edu/from_binary.html). It is
 You then need to install the dependencies of this package by using
 
 ```
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 Finally, take a look at the files in the `drake_demo` subfolder.
