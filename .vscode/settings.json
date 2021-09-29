@@ -1,0 +1,18 @@
+{
+    "python.analysis.extraPaths": [
+        "/opt/drake/lib/python3.9/site-packages"
+    ],
+    "python.autoComplete.extraPaths": [
+        "/opt/drake/lib/python3.9/site-packages"
+    ],
+    "python.formatting.provider": "black",
+    "python.languageServer": "Pylance",
+    "editor.formatOnSave": true,
+    "autoDocstring.docstringFormat": "numpy",
+    "autoDocstring.startOnNewLine": true,
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
