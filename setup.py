@@ -1,4 +1,4 @@
-from distutils.core import setup
+from distutils.core import setup, find_packages
 
 setup(
     name="drake_demo",
@@ -7,5 +7,5 @@ setup(
     author="Jeremie Bannwarth",
     author_email="jban039@aucklanduni.ac.nz",
     url="https://github.com/Abi-Humanoid/drake_demo",
-    packages=["drake_demo", "drake_demo.tests"],
+    packages=find_packages(),
 )
