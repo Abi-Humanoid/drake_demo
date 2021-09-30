@@ -20,9 +20,13 @@ def stabilising_controller(
     Notes
     -----
     The controller, derived by Åkesson [1]_, takes the form of a full-state feedback (FSFB) law:
-    .. math::u = - \mathbf{K} \mathbf{x},
-    where :math:`\mathbf{K}` is the FSFB gain matrix and
-    .. math::\mathbf{x} = \begin{bmatrix}\mathbf{q}&\dot{\mathbf{q}}\end{matrix}
+
+    .. math:: u = - \\mathbf{K} \\mathbf{x},
+
+    where :math:`\\mathbf{K}` is the FSFB gain matrix and
+
+    .. math:: \\mathbf{x} = \\begin{bmatrix}\\mathbf{q}\\\\\\dot{\\mathbf{q}}\\end{bmatrix}
+
     is the system state, which consists of the two angular positions and velocities.
 
     The elements of the gain matrix were analytically derived to allow for pole placement
@@ -36,7 +40,7 @@ def stabilising_controller(
     This is a linear controller and will only stabilise the closed-loop system within the
     region of attraction of its upright equilibrium point.
 
-    .. [1]_ Åkesson, J 1999, Safe Reference Following on the Inverted Pendulum.
+    .. [1] Åkesson, J 1999, Safe Reference Following on the Inverted Pendulum.
        Technical Reports TFRT-7587, Department of Automatic Control,
        Lund Institute of Technology (LTH).
        https://portal.research.lu.se/portal/files/11127725/7587.pdf
@@ -113,11 +117,13 @@ def lqr_controller(furuta: FurutaPendulum) -> Union[np.ndarray, np.ndarray]:
     -----
     For an introduction to linear quadratic control, see [1]_. The control law
     used is linear and is the same as that used by the analytical FSFB controller:
-    .. math::u = - \mathbf{K} \mathbf{x}.
-    However, the way the `\mathbf{K}` matrix is obtained is different. Here, it
+
+    .. math:: u = - \\mathbf{K} \\mathbf{x}.
+
+    However, the way the :math:`\\mathbf{K}` matrix is obtained is different. Here, it
     minimises a cost function in an optimal way.
 
-    The :math:`\mathbf{Q}` and :math:`R` weights are chosen arbitrarily. For
+    The :math:`\\mathbf{Q}` and :math:`R` weights are chosen arbitrarily. For
     real applications, some tuning will be required.
 
     .. [1] Russ Tedrake. Linear Quadratic Regulators. In: Underactuated Robotics:
@@ -159,9 +165,12 @@ class SwingUpController(pydrake.systems.framework.VectorSystem):
     Notes
     -----
     Use the energy controller presented in [1]_:
-    .. math::u = \mathrm{sat}\left(k(E_n - E_0) \mathrm{sign}(\dot{\theta}\cos\theta)\right),
+
+    .. math:: u = \\mathrm{sat}\\left(k(E_n - E_0) \\mathrm{sign}(\\dot{\\theta}\\cos\\theta)\\right),
+
     where the energy is defined as
-    .. math:: E_n = \frac{\dot{\theta}^2}{2\omega_0^2} + \cos\theta - 1.
+
+    .. math:: E_n = \\frac{\\dot{\\theta}^2}{2\\omega_0^2} + \\cos\\theta - 1.
 
     Due to actuation limits, if the pendulum starts at the bottom equilibrium point, it will not
     be able to go to the top equilibrium point in a straight path. Instead, it will need to rock
@@ -171,7 +180,7 @@ class SwingUpController(pydrake.systems.framework.VectorSystem):
     The energy controller is an elegant way to 'pump' kinetic energy into the system. This is an
     example of nonlinear control.
 
-    .. [1]_ Åkesson, J 1999, Safe Reference Following on the Inverted Pendulum.
+    .. [1] Åkesson, J 1999, Safe Reference Following on the Inverted Pendulum.
        Technical Reports TFRT-7587, Department of Automatic Control,
        Lund Institute of Technology (LTH).
        https://portal.research.lu.se/portal/files/11127725/7587.pdf
@@ -242,7 +251,7 @@ class SwingUpAndCatchController(pydrake.systems.framework.VectorSystem):
     This controller combines both the swing-up controller and the LQR
     controller. Switching between the two is performed using the threshold
     highlighted in [1]_, but it could also be done based on a rule of thumb
-    such as 'if the angle from the top is less than X degrees, switch to the
+    such as 'if the angle from the top is less than :math:`X` degrees, switch to the
     LQR controller'.
 
     .. [1] Russ Tedrake. The Simple Pendulum. In: Underactuated Robotics:
