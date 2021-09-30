@@ -2,3 +2,4 @@ numpy
 pytest
 pydot
 matplotlib
+black
