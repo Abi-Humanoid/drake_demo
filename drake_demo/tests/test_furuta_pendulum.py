@@ -19,11 +19,15 @@ def analytical_linearization(
     Notes
     -----
     Linearising a system refers to taking a nonlinear system in the form
-    .. math::\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}, \mathbf{u}),
-    where :math:`\mathbf{x}` and :math:`\mathbf{u}` are the state and input,
+
+    .. math:: \\dot{\\mathbf{x}} = \\mathbf{f}(\\mathbf{x}, \\mathbf{u}),
+
+    where :math:`\\mathbf{x}` and :math:`\\mathbf{u}` are the state and input,
     respectively, and approximating it into the form
-    .. math::\dot{\mathbf{x}} = \mathbf{A}\mathbf{x} + \mathbf{B}\mathbf{u},
-    where :math:`\mathbf{A}` and :math:`\mathbf{B}` are matrices of constants.
+
+    .. math:: \\dot{\\mathbf{x}} = \\mathbf{A}\\mathbf{x} + \\mathbf{B}\\mathbf{u},
+
+    where :math:`\\mathbf{A}` and :math:`\\mathbf{B}` are matrices of constants.
 
     The analytical linearisation of the Furuta pendulum around the upright
     equilibrium is given in [1]_.
@@ -151,11 +155,16 @@ def test_stabilising_controller() -> None:
     disturbance rejection requirements, among others.
 
     If you apply a full-state feedback control law
-    .. math::\mathbf{u} = - \mathbf{K} \mathbf{x}
+
+    .. math:: \\mathbf{u} = - \\mathbf{K} \\mathbf{x}
+
     to a linear system
-    .. math::\dot{\mathbf{x}} = \mathbf{A}\mathbf{x} + \mathbf{B}\mathbf{u},
+
+    .. math:: \\dot{\\mathbf{x}} = \\mathbf{A}\\mathbf{x} + \\mathbf{B}\\mathbf{u},
+
     the poles of the resulting closed-loop system are the eigenvalues of
-    .. math::(\mathbf{A} - \mathbf{B}\mathbf{K}).
+
+    .. math:: (\\mathbf{A} - \\mathbf{B}\\mathbf{K}).
 
     If all the poles of the system are in the left hand plane, the (linearised)
     system is stable.
