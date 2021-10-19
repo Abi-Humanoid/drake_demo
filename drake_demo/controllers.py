@@ -30,7 +30,7 @@ def stabilising_controller(
     is the system state, which consists of the two angular positions and velocities.
 
     The elements of the gain matrix were analytically derived to allow for pole placement
-    of the system linearised around a desired arm angular speed :math:`\dot{\phi}_0`.
+    of the system linearised around a desired arm angular speed :math:`\\dot{\\phi}_0`.
     This placement is achieved by determining the natural frequency and damping ratio of
     each link.
 
