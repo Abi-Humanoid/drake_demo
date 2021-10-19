@@ -1,4 +1,4 @@
-from distutils.core import setup, find_packages
+from setuptools import setup, find_namespace_packages
 
 setup(
     name="drake_demo",
@@ -7,5 +7,5 @@ setup(
     author="Jeremie Bannwarth",
     author_email="jban039@aucklanduni.ac.nz",
     url="https://github.com/Abi-Humanoid/drake_demo",
-    packages=find_packages(),
+    packages=find_namespace_packages(),
 )
