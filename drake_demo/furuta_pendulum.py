@@ -19,9 +19,9 @@ def FurutaPendulum_(T):
     the system and keep it there.
 
     The notation and equations used here are based on that presented in [1]_. The
-    angle of the arm is defined as :math:`\phi`, and the angle of the pendulum
-    is defined as :math:`\theta`. The angle of the pendulum is measured from the
-    upright. I.e., when :math:`\theta=0`, the pendulum is at the upright unstable
+    angle of the arm is defined as :math:`\\phi`, and the angle of the pendulum
+    is defined as :math:`\\theta`. The angle of the pendulum is measured from the
+    upright. I.e., when :math:`\\theta=0`, the pendulum is at the upright unstable
     equilibrium point.
 
     The pendulum model is implemented using a Drake LeafSystem. LeafSystem objects are
@@ -113,10 +113,11 @@ def FurutaPendulum_(T):
             -----
             The furuta pendulum equations of motion can be rewritten in the standard
             'manipulator equation' form:
+
             .. math::
-                \mathbf{M}(\mathbf{q}) \ddot{\mathbf{q}}
-                + \mathbf{C}(\mathbf{q},\dot{\mathbf{q}}) \dot{\mathbf{q}}
-                + \mathbf{g}(\mathbf{q}) = \tau
+                \\mathbf{M}(\\mathbf{q}) \\ddot{\\mathbf{q}}
+                + \\mathbf{C}(\\mathbf{q},\\dot{\\mathbf{q}}) \\dot{\\mathbf{q}}
+                + \\mathbf{g}(\\mathbf{q}) = \\tau
 
             When implementing equations manually it is really helpful to create test
             functions to make sure they are correct. For example, you can check the
