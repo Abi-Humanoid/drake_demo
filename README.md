@@ -1,5 +1,7 @@
 # Drake Demonstration
 
+![Unit tests](https://github.com/Abi-Humanoid/drake_demo/actions/workflows/unit-tests.yml/badge.svg)
+
 This repository contains a demonstration of Drake.
 
 A [Furuta pendulum](https://en.wikipedia.org/wiki/Furuta_pendulum) is taken as a case study.
